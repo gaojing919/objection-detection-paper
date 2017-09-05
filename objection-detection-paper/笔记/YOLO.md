@@ -1,6 +1,6 @@
 YOLO:You Only Look Once:Unified,Real-Time Object Dection  
 # 摘要 #
-实时的物体检测器1231241
+实时的物体检测器1231241fffff
 特别快，有两个版本：YOLO:45fps,Fast YOLO:155fps  
 把物体检测当成一个回归问题来对待  
 使用一个单个的神经网络直接从图片中预测bounding-box和物体所属类别的概率  
