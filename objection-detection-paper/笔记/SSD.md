@@ -46,9 +46,13 @@ default box中心：上每个 default box的中心位置设置成 \\( ( \frac{i+
 当 ground truth box 的 中心（center）在采样的 patch 中时，我们保留重叠部分。在这些采样步骤之后，每一个采样的 patch 被 resize 到固定的大小，并且以 0.5 的概率随机的 水平翻转（horizontally flipped）。  
 # 3.实验结果 #
 ## PASCAL VOC2007##
-
-
-
+conv4_ 3,conv7 (fc7), conv8_ 2, conv9 _2, conv10 _2, and conv11_ 2预测位置和信度。  
+conv4_3的尺度是0.1,conv4_3,conv10_2,conv11_2在feature map的每个位置只使用4个默认box，省略了纵横比（1/3,3）,所有的其他层使用6个默认Box    
+因为conv4_3的特征尺度跟别的层不一样，所以使用L2规范化方法把conv4_3的feature map在每个位置的特征的模统一成20，这个尺度是在反向传播时学习到的  
+在VOC2007上的实验结果：  
+   ![](https://i.imgur.com/fQZPAhQ.png)                                                                                                                                                                 
+  SSD的的定位错误很少，跟相似类别容易混淆，尤其是动物 ，在小的物体上的表现去在大的物体上表现差，提升小物体的检测准确率的空间很大   
+## 模型分析 ##
 
 
 
